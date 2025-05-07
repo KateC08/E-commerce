@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Simple Homepage</title>
-  </head>
+</head>
 
 <body>
+
   <nav>
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -19,88 +21,148 @@
   <section class="home">
     <div class="home-section" id="home">
       <div class="home-content">
-        <h2>RIDE BOLD. <BR> GEAR UP.</h2>
-          <div class="button-wrapper">
-            <a href="#" class="shop-button">SHOP NOW</a>
+        <h2>RIDE BOLD. <br> GEAR UP.</h2>
+        <div class="button-wrapper">
+          <a href="#" class="shop-button">SHOP NOW</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-wrapper">
+    <section class="shop-page">
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h3>FILTERS</h3>
+
+        <div class="shop-by">
+          <h4>Shop By</h4>
+          <ul>
+            <li><input type="checkbox"> New (776)</li>
+            <li><input type="checkbox"> Sale (347)</li>
+            <li><input type="checkbox"> Closeout (2262)</li>
+            <li><input type="checkbox"> Open Box (506)</li>
+            <li><input type="checkbox"> Exclusives (333)</li>
+          </ul>
+        </div>
+
+        <div class="products-list">
+          <h4>Products</h4>
+          <ul>
+            <li>Base & Mid Layers</li>
+            <li>Boots & Shoes</li>
+            <li>Eyewear</li>
+            <li>Gloves</li>
+            <li>Helmets</li>
+            <li>Jacket</li>
+            <li>Protection</li>
+            <li>Race Suits</li>
+            <li>Rain Gear</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="breadcrumbs">
+          Home > Riding Gear
+        </div>
+
+        <div class="shop-header">
+          <h1>RIDING GEAR (8706)</h1>
+          <div class="search-bar">
+            <input type="text" placeholder="Search...">
           </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="shop-page">
-    <div class="sidebar">
-      <h2>FILTERS</h2>
-      <h3>Shop By</h3>
-      <ul class="filter-list">
-        <li><input type="checkbox"> New (776)</li>
-        <li><input type="checkbox"> Sale (347)</li>
-        <li><input type="checkbox"> Closeout (2262)</li>
-        <li><input type="checkbox"> Open Box (506)</li>
-        <li><input type="checkbox"> Exclusives (333)</li>
-      </ul>
-  
-      <h3>Products</h3>
-      <ul class="product-list">
-        <li>Base & Mid Layers</li>
-        <li>Boots & Shoes</li>
-        <li>Eyewear</li>
-        <li>Gloves</li>
-        <li>Headwear</li>
-        <li>Heated Gear</li>
-        <li>Helmets</li>
-        <li>Jacket</li>
-        <li>Jersey</li>
-        <li>Pants</li>
-        <li>Protection</li>
-        <li>Race Suits</li>
-        <li>Rain Gear</li>
-        <li>Riding Shirt</li>
-        <li>Riding Suit</li>
-        <li>Vest</li>
-      </ul>
-    </div>
-  
-    <div class="main-content">
-      <div class="breadcrumbs">
-        Home > Riding Gear
-      </div>
-  
-      <div class="shop-header">
-        <h1>RIDING GEAR (8706)</h1>
-        <input type="text" placeholder="Search...">
-      </div>
-  
-      <div class="product-grid">
-        <!-- Example product -->
-        <div class="product-card">
-          <img src="https://via.placeholder.com/150" alt="Product">
-          <h4>Helmet</h4>
-          <p>₱25,499.00</p>
         </div>
-  
-        <div class="product-card">
-          <img src="https://via.placeholder.com/150" alt="Product">
-          <h4>Gloves</h4>
-          <p>₱3,850.00</p>
+
+        <div class="sort-bar">
+          <select>
+            <option>Sort by Best Sellers</option>
+            <option>Price Low to High</option>
+            <option>Price High to Low</option>
+          </select>
         </div>
-  
-        <div class="product-card">
-          <img src="https://via.placeholder.com/150" alt="Product">
-          <h4>Boots</h4>
-          <p>₱16,445.00</p>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="assets/helmet.jpg" alt="Helmet">
+            <div class="product-name-cart">
+              <h4>Helmet</h4>
+              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <p>₱25,499.00</p>
+            <div class="stars">★★★★☆</div>
+          </div>
+
+          <div class="product-card">
+            <img src="assets/gloves.jpg" alt="Gloves">
+            <div class="product-name-cart">
+              <h4>Gloves</h4>
+              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <p>₱3,850.00</p>
+            <div class="stars">★★★☆☆</div>
+          </div>
+
+          <div class="product-card">
+            <img src="assets/boots.jpg" alt="Boots">
+            <div class="product-name-cart">
+              <h4>Boots</h4>
+              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <p>₱16,445.00</p>
+            <div class="stars">★★★★★</div>
+          </div>
         </div>
-  
-        <!-- Add more products here -->
+
+        <br><br>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="assets/boots.jpg" alt="Boots">
+            <div class="product-name-cart">
+              <h4>Boots</h4>
+              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <p>₱25,499.00</p>
+            <div class="stars">★★★★☆</div>
+          </div>
+
+          <div class="product-card">
+            <img src="assets/eyewear.jpg" alt="Eyewear">
+            <div class="product-name-cart">
+              <h4>Eyewear</h4>
+              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <p>₱3,850.00</p>
+            <div class="stars">★★★☆☆</div>
+          </div>
+
+          <div class="product-card">
+            <img src="assets/racesuits.jpg" alt="Race Suits">
+            <div class="product-name-cart">
+              <h4>Race Suits</h4>
+              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+            </div>
+            <p>₱16,445.00</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  
 
+      <!-- Right Banners -->
+      <div class="right-banner">
+        <img src="assets/tempbk.jpg" alt="Banner 1">
+        <img src="assets/tempbk.jpg" alt="Banner 2">
+      </div>
 
+    </section>
+  </div>
 
-<footer>
-  &copy; 2025 Your Website Name
-</footer>
+  <footer>
+    &copy; 2025 Your Website Name
+  </footer>
 
 </body>
 </html>
