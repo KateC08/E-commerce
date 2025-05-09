@@ -6,15 +6,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>Simple Homepage</title>
+  <title>Revanna</title>
 </head>
 
 <body>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#">Add to cart</a>
     <a href="#">Contact</a>
   </nav>
 
@@ -30,35 +30,36 @@
   </section>
 
   <div class="page-wrapper">
-    <section class="shop-page">
+    <section class="shop-page"v id="products">
 
       <!-- Sidebar -->
       <div class="sidebar">
-        <h3>FILTERS</h3>
+        <h3 style="color: black">FILTERS</h3>
 
         <div class="shop-by">
-          <h4>Shop By</h4>
+          <h4  style="color: black">Shop By</h4>
           <ul>
             <li><input type="checkbox"> New (776)</li>
             <li><input type="checkbox"> Sale (347)</li>
             <li><input type="checkbox"> Closeout (2262)</li>
             <li><input type="checkbox"> Open Box (506)</li>
-            <li><input type="checkbox"> Exclusives (333)</li>
           </ul>
         </div>
 
         <div class="products-list">
-          <h4>Products</h4>
+          <h4  style="color: black">Products</h4>
           <ul>
-            <li>Base & Mid Layers</li>
-            <li>Boots & Shoes</li>
-            <li>Eyewear</li>
-            <li>Gloves</li>
-            <li>Helmets</li>
-            <li>Jacket</li>
-            <li>Protection</li>
-            <li>Race Suits</li>
-            <li>Rain Gear</li>
+            <li  style="color: black">Base & Mid Layers</li>
+            <li  style="color: black">Boots & Shoes</li>
+            <li  style="color: black">Eyewear</li>
+            <li  style="color: black">Gloves</li>
+            <li  style="color: black">Helmets</li>
+            <li  style="color: black">Jacket</li>
+            <li  style="color: black">Protection</li>
+            <li  style="color: black">Race Suits</li>
+            <li  style="color: black">Frame Slider</li>
+            <li  style="color: black">Top Box</li>
+
           </ul>
         </div>
       </div>
@@ -70,11 +71,13 @@
         </div>
 
         <div class="shop-header">
-          <h1>RIDING GEAR (8706)</h1>
+          <h1>RIDING GEAR & ACCESSORIES</h1>
           <div class="search-bar">
-            <input type="text" placeholder="Search...">
+            <input type="text">
+            <i class="fas fa-search"></i>
           </div>
         </div>
+        
 
         <div class="sort-bar">
           <select>
@@ -84,84 +87,114 @@
           </select>
         </div>
 
-        <div class="product-grid">
-          <div class="product-card">
-            <img src="assets/helmet.jpg" alt="Helmet">
-            <div class="product-name-cart">
-              <h4>Helmet</h4>
-              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+        <!-- Wrapper for products and right-banner -->
+        <div class="products-and-banner">
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="assets/helmet.jpg" alt="Helmet">
+              <div class="product-name-cart">
+                <h4>Helmet</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱25,499.00</p>
+              <div class="stars">★★★★☆</div>
             </div>
-            <p>₱25,499.00</p>
-            <div class="stars">★★★★☆</div>
+
+            <div class="product-card">
+              <img src="assets/frameslider.jpg" alt="Boots">
+              <div class="product-name-cart">
+                <h4>MT-15 CNC Frame Slider, Protection</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱16,445.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/gloves.jpg" alt="Gloves">
+              <div class="product-name-cart">
+                <h4>Gloves</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱3,850.00</p>
+              <div class="stars">★★★☆☆</div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/boots.jpg" alt="Boots">
+              <div class="product-name-cart">
+                <h4>Boots</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱16,445.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/topbox.jpg" alt="Boots">
+              <div class="product-name-cart">
+                <h4>Top Box Motorcycle Box 45L with base plate</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱25,499.00</p>
+              <div class="stars">★★★★☆</div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/frameslider.jpg" alt="Boots">
+              <div class="product-name-cart">
+                <h4>Alphinestars Mens SMX Plus Boots</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱16,445.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/eyewear.jpg" alt="Eyewear">
+              <div class="product-name-cart">
+                <h4>Eyewear</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱3,850.00</p>
+              <div class="stars">★★★☆☆</div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/helmet1.png" alt="Eyewear">
+              <div class="product-name-cart">
+                <h4>Spyder Force+ V2 Modular Dual Visor Helmet with Free Extra Clear Visor</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱3,850.00</p>
+              <div class="stars">★★★☆☆</div>
+            </div>
+
+            <div class="product-card">
+              <img src="assets/racesuits.jpg" alt="Race Suits">
+              <div class="product-name-cart">
+                <h4>Race Suits</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱16,445.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
           </div>
 
-          <div class="product-card">
-            <img src="assets/gloves.jpg" alt="Gloves">
-            <div class="product-name-cart">
-              <h4>Gloves</h4>
-              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <p>₱3,850.00</p>
-            <div class="stars">★★★☆☆</div>
-          </div>
-
-          <div class="product-card">
-            <img src="assets/boots.jpg" alt="Boots">
-            <div class="product-name-cart">
-              <h4>Boots</h4>
-              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <p>₱16,445.00</p>
-            <div class="stars">★★★★★</div>
+          <!-- Right Banner -->
+          <div class="right-banner">
+            <img src="assets/tempbk.jpg" alt="Banner 1">
+            <img src="assets/tempbk.jpg" alt="Banner 2">
           </div>
         </div>
 
-        <br><br>
-
-        <div class="product-grid">
-          <div class="product-card">
-            <img src="assets/boots.jpg" alt="Boots">
-            <div class="product-name-cart">
-              <h4>Boots</h4>
-              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <p>₱25,499.00</p>
-            <div class="stars">★★★★☆</div>
-          </div>
-
-          <div class="product-card">
-            <img src="assets/eyewear.jpg" alt="Eyewear">
-            <div class="product-name-cart">
-              <h4>Eyewear</h4>
-              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <p>₱3,850.00</p>
-            <div class="stars">★★★☆☆</div>
-          </div>
-
-          <div class="product-card">
-            <img src="assets/racesuits.jpg" alt="Race Suits">
-            <div class="product-name-cart">
-              <h4>Race Suits</h4>
-              <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
-            </div>
-            <p>₱16,445.00</p>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Banners -->
-      <div class="right-banner">
-        <img src="assets/tempbk.jpg" alt="Banner 1">
-        <img src="assets/tempbk.jpg" alt="Banner 2">
       </div>
 
     </section>
   </div>
 
   <footer>
-    &copy; 2025 Your Website Name
+    &copy; 2025 Revanna
   </footer>
 
 </body>
