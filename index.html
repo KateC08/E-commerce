@@ -32,37 +32,34 @@
   <div class="page-wrapper">
     <section class="shop-page"v id="products">
 
-      <!-- Sidebar -->
+
       <div class="sidebar">
-        <h3 style="color: black">FILTERS</h3>
+  <h3>Filters</h3>
+  
+  <h4>Shop By</h4>
+  <ul>
+    <li><a href="#" data-filter="All">All</a></li>
+    <li><a href="#" data-filter="New">New</a></li>
+    <li><a href="#" data-filter="Sale">Sale</a></li>
+    <li><a href="#" data-filter="Closeout">Closeout</a></li>
+    <li><a href="#" data-filter="Open Box">Open Box</a></li>
+  </ul>
 
-        <div class="shop-by">
-          <h4  style="color: black">Shop By</h4>
-          <ul>
-            <li><input type="checkbox"> New (776)</li>
-            <li><input type="checkbox"> Sale (347)</li>
-            <li><input type="checkbox"> Closeout (2262)</li>
-            <li><input type="checkbox"> Open Box (506)</li>
-          </ul>
-        </div>
+  <h4>Products</h4>
+  <ul>
+    <li><a href="#" data-filter="Handle-Grip">Handle Grip</a></li>
+    <li><a href="#" data-filter="Boots">Boots</a></li>
+    <li><a href="#" data-filter="Eyewear">Goggles</a></li>
+    <li><a href="#" data-filter="Gloves">Gloves</a></li>
+    <li><a href="#" data-filter="Helmets">Helmets</a></li>
+    <li><a href="#" data-filter="Cover">Cover</a></li>
+    <li><a href="#" data-filter="Mags">Mags</a></li>
+    <li><a href="#" data-filter="Race-Suits">Race Suits</a></li>
+    <li><a href="#" data-filter="Frame-Slider">Frame Slider</a></li>
+    <li><a href="#" data-filter="Top-Box">Top Box</a></li>
+  </ul>
+</div>
 
-        <div class="products-list">
-          <h4  style="color: black">Products</h4>
-          <ul>
-            <li  style="color: black">Base & Mid Layers</li>
-            <li  style="color: black">Boots & Shoes</li>
-            <li  style="color: black">Eyewear</li>
-            <li  style="color: black">Gloves</li>
-            <li  style="color: black">Helmets</li>
-            <li  style="color: black">Jacket</li>
-            <li  style="color: black">Protection</li>
-            <li  style="color: black">Race Suits</li>
-            <li  style="color: black">Frame Slider</li>
-            <li  style="color: black">Top Box</li>
-
-          </ul>
-        </div>
-      </div>
 
       <!-- Main Content -->
       <div class="main-content">
@@ -90,17 +87,20 @@
         <!-- Wrapper for products and right-banner -->
         <div class="products-and-banner">
           <div class="product-grid">
-            <div class="product-card">
+            
+               <div id="no-results" style="display: none;">No Products Found</div>
+
+            <div class="product-card" data-category="Helmets">
               <img src="assets/helmet.jpg" alt="Helmet">
               <div class="product-name-cart">
-                <h4>Helmet</h4>
+                <h4>ZEBRA FF655 Full face helmet single visor for Motorcycle</h4>
                 <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
               </div>
               <p>₱25,499.00</p>
               <div class="stars">★★★★☆</div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="Frame-Slider" >
               <img src="assets/frameslider.jpg" alt="Boots">
               <div class="product-name-cart">
                 <h4>MT-15 CNC Frame Slider, Protection</h4>
@@ -110,27 +110,109 @@
               <div class="stars">★★★★★</div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="Mags New">
+              <img src="assets/mags2.PNG" alt="Boots">
+              <div class="product-name-cart">
+                <h4>NEW✅ RCB CT600 MAGS FOR HONDA CLICK 125/150</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱7,599.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card" data-category="Cover">
+              <img src="assets/cover.PNG" alt="Boots">
+              <div class="product-name-cart">
+                <h4>Motorcycle Cover Silver Protective Material</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱89.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card" data-category="Cover">
+              <img src="assets/cover1.PNG" alt="Boots">
+              <div class="product-name-cart">
+                <h4>Black Waterproof Motorcycle Cover</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱92.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+
+            <div class="product-card" data-category="Frame-Slider">
+              <img src="assets/frameslider1.PNG" alt="Race Suits">
+              <div class="product-name-cart">
+                <h4>REALZION For Cb650r Falling Protection Frame Slider</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱2,630.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card" data-category="Race-Suits">
+              <img src="assets/racesuits1.jpg" alt="Race Suits">
+              <div class="product-name-cart">
+                <h4>Motorcycle Leather Gear Racing Suit Motorbike Riding Race Suit</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱92.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card" data-category="Gloves">
               <img src="assets/gloves.jpg" alt="Gloves">
               <div class="product-name-cart">
-                <h4>Gloves</h4>
+                <h4>Motorcycle gloves Tactical Gloves Cycling </h4>
                 <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
               </div>
               <p>₱3,850.00</p>
               <div class="stars">★★★☆☆</div>
             </div>
 
-            <div class="product-card">
-              <img src="assets/boots.jpg" alt="Boots">
+            <div class="product-card" data-category="Boots">
+              <img src="assets/boots1.jpg" alt="Boots">
               <div class="product-name-cart">
-                <h4>Boots</h4>
+                <h4>Speed hi-cut boots (Speed biker)</h4>
                 <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
               </div>
-              <p>₱16,445.00</p>
+              <p>₱1,445.00</p>
               <div class="stars">★★★★★</div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="Top-Box New">
+              <img src="assets/topbox1.PNG" alt="Boots">
+              <div class="product-name-cart">
+                <h4>NEW ‼️ 45L-55L ALLOY TOP BOX with backrest & baseplate</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱3,199.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card" data-category="Gloves Sale">
+              <img src="assets/gloves1.PNG" alt="Boots">
+              <div class="product-name-cart">
+                <h4>SALE!!! Komine GK220 Protect Mesh Gloves</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱3,199.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+             <div class="product-card" data-category="Eyewear">
+              <img src="assets/eyewear1.PNG" alt="Boots">
+              <div class="product-name-cart">
+                <h4>X400 Goggles Motorcycle </h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱3,199.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+
+            <div class="product-card" data-category="Top-Box">
               <img src="assets/topbox.jpg" alt="Boots">
               <div class="product-name-cart">
                 <h4>Top Box Motorcycle Box 45L with base plate</h4>
@@ -140,27 +222,27 @@
               <div class="stars">★★★★☆</div>
             </div>
 
-            <div class="product-card">
-              <img src="assets/frameslider.jpg" alt="Boots">
+            <div class="product-card" data-category="Boots Sale">
+              <img src="assets/boots.jpg" alt="Boots">
               <div class="product-name-cart">
-                <h4>Alphinestars Mens SMX Plus Boots</h4>
+                <h4>SALE!! Alphinestars Mens SMX Plus Boots</h4>
                 <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
               </div>
               <p>₱16,445.00</p>
               <div class="stars">★★★★★</div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="Eyewear">
               <img src="assets/eyewear.jpg" alt="Eyewear">
               <div class="product-name-cart">
-                <h4>Eyewear</h4>
+                <h4>Motocross Goggles UV400 Motorcycle Glasses</h4>
                 <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
               </div>
-              <p>₱3,850.00</p>
+              <p>₱92.00</p>
               <div class="stars">★★★☆☆</div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="Helmets">
               <img src="assets/helmet1.png" alt="Eyewear">
               <div class="product-name-cart">
                 <h4>Spyder Force+ V2 Modular Dual Visor Helmet with Free Extra Clear Visor</h4>
@@ -170,15 +252,46 @@
               <div class="stars">★★★☆☆</div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-category="Race-Suits">
               <img src="assets/racesuits.jpg" alt="Race Suits">
               <div class="product-name-cart">
-                <h4>Race Suits</h4>
+                <h4>Dainese Laguna Seca EVO Perforated Women's Race Suit</h4>
                 <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
               </div>
               <p>₱16,445.00</p>
               <div class="stars">★★★★★</div>
             </div>
+
+            <div class="product-card" data-category="Mags">
+              <img src="assets/raider.PNG" alt="Race Suits">
+              <div class="product-name-cart">
+                <h4>RCB Sport Rim 522 1.60F 1.85R 17" for Suzuki Raider Race Suits</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱16,445.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card" data-category="Handle-Grip">
+              <img src="assets/grip.PNG" alt="Race Suits">
+              <div class="product-name-cart">
+                <h4>Domino Universal Handle Grip Transparent Silicone</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱16,445.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card" data-category="Handle-Grip">
+              <img src="assets/grip1.PNG" alt="Race Suits">
+              <div class="product-name-cart">
+                <h4>Barracuda Universal Handle Grip for all motorcycle</h4>
+                <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+              </div>
+              <p>₱16,445.00</p>
+              <div class="stars">★★★★★</div>
+            </div>
+
           </div>
 
           <!-- Right Banner -->
@@ -193,9 +306,76 @@
     </section>
   </div>
 
+
   <footer>
     &copy; 2025 Revanna
   </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const filterLinks = document.querySelectorAll('.sidebar a');
+  const productCards = document.querySelectorAll('.product-card');
+  const searchInput = document.querySelector('.search-bar input');
+  const noResults = document.getElementById('no-results');
+
+  // Filter function
+  filterLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const filter = link.getAttribute('data-filter');
+
+      let anyVisible = false;
+
+      productCards.forEach(card => {
+        const categories = card.getAttribute('data-category').split(' ');
+
+        if (filter === 'All' || categories.includes(filter)) {
+          card.style.display = 'flex';
+          anyVisible = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Hide search input value when clicking filter
+      searchInput.value = '';
+
+      // Hide or show "No products found" message
+      if (anyVisible) {
+        noResults.style.display = 'none';
+      } else {
+        noResults.style.display = 'block';
+      }
+    });
+  });
+
+  // Search function
+  searchInput.addEventListener('input', () => {
+    const searchValue = searchInput.value.toLowerCase().trim();
+    let anyVisible = false;
+
+    productCards.forEach(card => {
+      const productName = card.querySelector('h4').textContent.toLowerCase();
+
+      if (productName.includes(searchValue)) {
+        card.style.display = 'flex';
+        anyVisible = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Show or hide "No products found" message
+    if (anyVisible) {
+      noResults.style.display = 'none';
+    } else {
+      noResults.style.display = 'block';
+    }
+  });
+});
+</script>
+
+
 
 </body>
 </html>
