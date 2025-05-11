@@ -19,6 +19,7 @@ a {
   color: inherit;
 }
 
+/* Home Section */
 .home {
   background: url('assets/fbk.jpg') center/cover no-repeat;
   display: flex;
@@ -173,6 +174,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  position: relative;
 }
 .product-card {
   background: #f9f9f9;
@@ -244,11 +246,8 @@ nav a:hover {
   text-align: center;
   z-index: 2;
 }
-.product-grid {
-  position: relative;
-}
 
-/* Modal Background */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -352,7 +351,7 @@ select:focus, input[type="number"]:focus {
   background-color: #45a049;
 }
 
-/* Feedback modal */
+/* Feedback Modal */
 .modal1 {
   position: fixed;
   z-index: 999;
@@ -501,23 +500,50 @@ select:focus, input[type="number"]:focus {
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .shop-page {
-    flex-direction: column;
-  }
-
-  .sidebar,
-  .right-banner {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
+  .home {
+    padding: 0 40px;
+    height: 90vh;
+  }
+  .home-content h2 {
+    font-size: 2.5rem;
+  }
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .products-and-banner {
+    flex-direction: column;
+  }
+  .right-banner {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 0 20px;
+    height: 80vh;
+    background-size: contain;
+    background-position: center;
+  }
+  .home-content {
+    padding: 30px;
+  }
+  .home-content h2 {
+    font-size: 2rem;
+  }
+  .search-bar {
+    width: 100%;
+  }
   .product-grid {
     grid-template-columns: 1fr;
   }

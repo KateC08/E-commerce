@@ -7,10 +7,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
+   <style>
     body {
       font-family: 'Oswald', sans-serif;
+      margin: 0;
+      padding: 0;
     }
+
+    nav {
+  background: #4caf50;
+  padding: 20px 40px;
+  display: flex;
+  gap: 50px;
+  justify-content: flex-end;
+}
+nav a {
+  color: white;
+  font-weight: 600;
+}
+nav a:hover {
+  color: #080808;
+}
 
     .container {
       max-width: 1000px;
@@ -29,6 +46,7 @@
       margin-bottom: 20px;
       border-bottom: 1px solid #ccc;
       padding-bottom: 15px;
+      flex-wrap: wrap;
     }
 
     .cart-item img {
@@ -108,7 +126,6 @@
       background-color: #45a049;
     }
 
-    /* Modal styles */
     .modal {
       position: fixed;
       z-index: 999;
@@ -156,67 +173,95 @@
     .modal-content .cta-button:hover {
       background-color: #45a049;
     }
-    @media (max-width: 768px) {
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .checkout-container {
-    flex-direction: column;
-  }
-
-  .form-section, .summary-section {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .summary-section h3,
-  .summary-section p {
-    font-size: 14px;
-  }
-
-  .modal-content {
-    margin: 20% auto;
-    width: 95%;
-  }
-
-  .form-section input,
-  .form-section select {
-    padding: 8px;
-    font-size: 14px;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  nav a {
-    font-size: 16px;
-  }
-
-  .checkout-button {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .footer-box {
-    margin-bottom: 20px;
-  }
-
-  .footer h2 {
-    font-size: 18px;
-    text-align: center;
-  }
+    /* Footer */
+.footer {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 40px 20px;
 }
+
+    .footer-heading {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .footer-box {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .connect-btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .checkout-container {
+        flex-direction: column;
+      }
+
+      .form-section, .summary-section {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .summary-section h3,
+      .summary-section p {
+        font-size: 14px;
+      }
+
+      .modal-content {
+        margin: 20% auto;
+        width: 95%;
+      }
+
+      .form-section input,
+      .form-section select {
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      nav a {
+        font-size: 16px;
+      }
+
+      .checkout-button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-box {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 
