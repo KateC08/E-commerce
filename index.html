@@ -14,7 +14,7 @@
   <nav>
     <a href="#home">Home</a>
     <a href="#products">Products</a>
-    <a href="#">Add to cart</a>
+    <a href="cart.html">Add to cart</a>
     <a href="#">Contact</a>
   </nav>
 
@@ -77,11 +77,11 @@
         
 
         <div class="sort-bar">
-          <select>
-            <option>Sort by Best Sellers</option>
-            <option>Price Low to High</option>
-            <option>Price High to Low</option>
-          </select>
+           <select>
+             <option value="Best Sellers">Sort by Best Sellers</option>
+             <option value="Price Low to High">Price Low to High</option>
+             <option value="Price High to Low">Price High to Low</option>
+           </select>
         </div>
 
         <!-- Wrapper for products and right-banner -->
@@ -301,34 +301,90 @@
           </div>
         </div>
 
+
+        <!-- Product Modal -->
+<div id="product-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-product-modal">&times;</span>
+    <div id="product-details">
+      <img id="modal-product-img" src="" alt="Product Image" style="width: 200px; height: auto;">
+      <h2 id="modal-product-name"></h2>
+      <p id="modal-product-price"></p>
+
+      <label for="size">Size:</label>
+      <select id="modal-product-size">
+        <option value="Small">Small (S)</option>
+        <option value="Medium">Medium (M)</option>
+        <option value="Large">Large (L)</option>
+        <option value="XLarge">Extra Large (XL)</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="modal-product-quantity" value="1" min="1">
+
+      <button id="add-to-cart-button">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
       </div>
 
     </section>
   </div>
 
+   
+<footer class="footer">
+    <h2 class="footer-heading">Ride Your Dream, Live the Journey</h2>
+    <div class="footer-content">
+      <div class="footer-box">
+        <p class="rating-title">Over 11,000 5-Star Journeys</p>
+        <p class="rating-subtitle">See why riders choose us again and again.</p>
+        <div class="stars">
+          &#9733; &#9733; &#9733; &#9733; &#9733;
+        </div>
+        <p class="review-count">11,000+ reviews</p>
+      </div>
 
-  <footer>
-    &copy; 2025 Revanna
+      <div class="footer-box">
+        <h3 class="box-title">Help Us Get Better</h3>
+        <p class="box-subtitle">Love something? Need a tweak? We’d love to hear your feedback.</p>
+        <button class="feedback-btn">LEAVE FEEDBACK</button>
+      </div>
+
+
+      <div class="footer-box connect">
+        <h3 class="box-title">CONNECT WITH US</h3>
+        <button class="connect-btn email">
+          📧 revanna@gmail.com
+        </button>
+        <button class="connect-btn call">
+          📞 09531702361
+        </button>
+        <p class="disclaimer">
+          Signing up for Revanna emails or texts means receiving marketing and other messages from Revanna via email or phone. Consent is not a condition of purchase. Msg & data rates may apply. View our <a href="#">privacy policy</a> and <a href="#">terms</a>.
+        </p>
+      </div>
+    </div>
   </footer>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const filterLinks = document.querySelectorAll('.sidebar a');
   const productCards = document.querySelectorAll('.product-card');
   const searchInput = document.querySelector('.search-bar input');
   const noResults = document.getElementById('no-results');
+  const sortSelect = document.querySelector('.sort-bar select');
+  const productGrid = document.querySelector('.product-grid');
 
   // Filter function
   filterLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const filter = link.getAttribute('data-filter');
-
       let anyVisible = false;
 
       productCards.forEach(card => {
         const categories = card.getAttribute('data-category').split(' ');
-
         if (filter === 'All' || categories.includes(filter)) {
           card.style.display = 'flex';
           anyVisible = true;
@@ -337,15 +393,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Hide search input value when clicking filter
       searchInput.value = '';
-
-      // Hide or show "No products found" message
-      if (anyVisible) {
-        noResults.style.display = 'none';
-      } else {
-        noResults.style.display = 'block';
-      }
+      noResults.style.display = anyVisible ? 'none' : 'block';
     });
   });
 
@@ -356,7 +405,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     productCards.forEach(card => {
       const productName = card.querySelector('h4').textContent.toLowerCase();
-
       if (productName.includes(searchValue)) {
         card.style.display = 'flex';
         anyVisible = true;
@@ -365,13 +413,128 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Show or hide "No products found" message
-    if (anyVisible) {
-      noResults.style.display = 'none';
+    noResults.style.display = anyVisible ? 'none' : 'block';
+  });
+
+  // Sort function
+  sortSelect.addEventListener('change', () => {
+    const option = sortSelect.value;
+    const productsArray = Array.from(productCards);
+
+    if (option === 'Price Low to High') {
+      productsArray.sort((a, b) => getPrice(a) - getPrice(b));
+    } else if (option === 'Price High to Low') {
+      productsArray.sort((a, b) => getPrice(b) - getPrice(a));
+    } else if (option === 'Best Sellers') {
+      productsArray.sort((a, b) => getRating(b) - getRating(a));
     } else {
-      noResults.style.display = 'block';
+      return;
+    }
+
+    productsArray.forEach(product => productGrid.appendChild(product));
+  });
+
+  function getPrice(card) {
+    const priceText = card.querySelector('p').textContent;
+    const price = parseFloat(priceText.replace('₱', '').replace(',', '').trim());
+    return isNaN(price) ? 0 : price;
+  }
+
+  function getRating(card) {
+    const ratingDiv = card.querySelector('.stars');
+    if (!ratingDiv) return 0;
+    
+    let starsText = ratingDiv.textContent.trim();
+    let fullStars = (starsText.match(/★/g) || []).length; // count full stars
+    let halfStars = (starsText.match(/☆/g) || []).length; // count half stars
+    
+    return fullStars + (halfStars * 0.5); // Full stars + half of half stars
+  }
+});
+
+
+</script>
+
+
+<script>
+
+// Handle opening product modal and adding to cart
+document.addEventListener('DOMContentLoaded', () => {
+  const cartIcons = document.querySelectorAll('.cart-icon');
+  const productModal = document.getElementById('product-modal');
+  const productImg = document.getElementById('modal-product-img');
+  const productName = document.getElementById('modal-product-name');
+  const productPrice = document.getElementById('modal-product-price');
+  const addToCartButton = document.getElementById('add-to-cart-button');
+  const closeProductModal = document.querySelector('.close-product-modal');
+
+  let selectedProduct = {};
+
+  cartIcons.forEach(cartIcon => {
+    cartIcon.addEventListener('click', (e) => {
+      const productCard = cartIcon.closest('.product-card');
+      const imgSrc = productCard.querySelector('img').getAttribute('src');
+      const name = productCard.querySelector('h4').innerText;
+      const price = productCard.querySelector('p').innerText;
+
+      // Fill modal with product details
+      productImg.src = imgSrc;
+      productName.textContent = name;
+      productPrice.textContent = price;
+
+      selectedProduct = {
+        imgSrc,
+        name,
+        price,
+      };
+
+      productModal.style.display = 'block';
+    });
+  });
+
+  closeProductModal.addEventListener('click', () => {
+    productModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === productModal) {
+      productModal.style.display = 'none';
     }
   });
+
+  // Save product to localStorage
+  addToCartButton.addEventListener('click', () => {
+  const size = document.getElementById('modal-product-size').value;
+  const quantity = parseInt(document.getElementById('modal-product-quantity').value);
+
+  const cartItem = {
+    imgSrc: selectedProduct.imgSrc,
+    name: selectedProduct.name,
+    price: selectedProduct.price,
+    size: size,
+    quantity: quantity
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Check if the item already exists in the cart (same name and size)
+  const existingItemIndex = cart.findIndex(item => item.name === cartItem.name && item.size === cartItem.size);
+
+  if (existingItemIndex !== -1) {
+    // Item exists, just update the quantity
+    cart[existingItemIndex].quantity += cartItem.quantity;
+  } else {
+    // Item doesn't exist, add a new product to the cart
+    cart.push(cartItem);
+  }
+
+  // Save the updated cart to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  alert('Product added to cart!');
+  productModal.style.display = 'none';
+});
+
 });
 </script>
 
