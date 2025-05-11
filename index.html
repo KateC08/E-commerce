@@ -15,7 +15,7 @@
     <a href="#home">Home</a>
     <a href="#products">Products</a>
     <a href="cart.html">Add to cart</a>
-    <a href="#">Contact</a>
+    <a href="#Contact">Contact</a>
   </nav>
 
   <section class="home">
@@ -34,10 +34,12 @@
 
 
       <div class="sidebar">
-  <h3>Filters</h3>
+  <h3 style="font-weight: 300px; color: black;">FILTERS</h3>
   
-  <h4>Shop By</h4>
-  <ul>
+  <hr style="border: 1px solid #2c2b2b; margin: 20px 0;">
+
+  <h4 style="font-weight: 300px; color: black;">Shop By</h4>
+  <ul style="color: black;">
     <li><a href="#" data-filter="All">All</a></li>
     <li><a href="#" data-filter="New">New</a></li>
     <li><a href="#" data-filter="Sale">Sale</a></li>
@@ -45,8 +47,10 @@
     <li><a href="#" data-filter="Open Box">Open Box</a></li>
   </ul>
 
-  <h4>Products</h4>
-  <ul>
+  <hr style="border: 1px solid #2c2b2b; margin: 20px 0;">
+
+  <h4 style="font-weight: 300px; color: black;">Products</h4>
+  <ul style="color: black;">
     <li><a href="#" data-filter="Handle-Grip">Handle Grip</a></li>
     <li><a href="#" data-filter="Boots">Boots</a></li>
     <li><a href="#" data-filter="Eyewear">Goggles</a></li>
@@ -296,8 +300,8 @@
 
           <!-- Right Banner -->
           <div class="right-banner">
-            <img src="assets/tempbk.jpg" alt="Banner 1">
-            <img src="assets/tempbk.jpg" alt="Banner 2">
+            <img src="assets/ban1.jpg" alt="Banner 1">
+            <img src="assets/ban2.jpg" alt="Banner 2">
           </div>
         </div>
 
@@ -333,8 +337,17 @@
     </section>
   </div>
 
+  <div id="feedback-modal" class="modal1">
+    <div class="modal-content">
+      <h2>Leave Feedback</h2>
+      <textarea id="feedback-text" placeholder="Tell us what you think..." rows="5" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+      <br><br>
+      <button class="cta-button" onclick="submitFeedback()">Submit</button>
+      <button class="cta-button" style="background-color: gray; margin-left: 10px;" onclick="closeFeedbackModal()">Cancel</button>
+    </div>
+  </div>
    
-<footer class="footer">
+<footer class="footer" id="Contact">
     <h2 class="footer-heading">Ride Your Dream, Live the Journey</h2>
     <div class="footer-content">
       <div class="footer-box">
@@ -457,7 +470,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <script>
-
 // Handle opening product modal and adding to cart
 document.addEventListener('DOMContentLoaded', () => {
   const cartIcons = document.querySelectorAll('.cart-icon');
@@ -536,6 +548,42 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 });
+</script>
+
+<script>
+  function submitFeedback() {
+    const feedbackText = document.getElementById('feedback-text').value.trim();
+    
+    if (!feedbackText) {
+      alert('Please enter your feedback before submitting.');
+      return;
+    }
+
+    // For now, we'll just log the feedback and show a confirmation
+    console.log('Feedback submitted:', feedbackText);
+    alert('Thank you for your feedback!');
+    
+    // Clear the text area and close the modal
+    document.getElementById('feedback-text').value = '';
+    closeFeedbackModal();
+  }
+
+  function closeFeedbackModal() {
+    document.getElementById('feedback-modal').style.display = 'none';
+  }
+
+  // Open modal on button click
+  document.querySelector('.feedback-btn').addEventListener('click', function () {
+    document.getElementById('feedback-modal').style.display = 'block';
+  });
+
+  // Close modal when clicking outside it
+  window.addEventListener('click', function (event) {
+    const modal = document.getElementById('feedback-modal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 </script>
 
 
