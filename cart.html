@@ -156,6 +156,67 @@
     .modal-content .cta-button:hover {
       background-color: #45a049;
     }
+    @media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkout-container {
+    flex-direction: column;
+  }
+
+  .form-section, .summary-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .summary-section h3,
+  .summary-section p {
+    font-size: 14px;
+  }
+
+  .modal-content {
+    margin: 20% auto;
+    width: 95%;
+  }
+
+  .form-section input,
+  .form-section select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  .checkout-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer-box {
+    margin-bottom: 20px;
+  }
+
+  .footer h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+}
   </style>
 </head>
 
@@ -207,7 +268,6 @@
         <h3>Estimated Total <span id="estimated-total">₱0.00</span></h3>
         <br>
         <button id="continue-summary" class="checkout-button">Continue</button>
-        <button class="back-button" id="back-to-cart" style="margin-bottom: 10px;" onclick="goBackToCart()">Back to Cart</button>
       </div>
     </div>
   </div>
