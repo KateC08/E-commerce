@@ -166,6 +166,7 @@ nav a:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+/*products */
 .products-and-banner {
   display: flex;
   gap: 20px;
@@ -223,6 +224,7 @@ nav a:hover {
   color: gold;
   font-size: 23px;
 }
+
 .right-banner {
   width: 150px;
   display: flex;
@@ -303,7 +305,33 @@ nav a:hover {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Add this for smooth zoom */
+  cursor: zoom-in; /* Change cursor to indicate zoom */
 }
+#modal-product-img:hover {
+  transform: scale(1.5); /* 1.5x zoom on hover */
+}
+#additional-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.additional-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.additional-img:hover {
+  border-color: #4caf50; /* Highlight on hover */
+}
+
 #modal-product-name {
   font-size: 1.5rem;
   color: #333;
@@ -351,6 +379,28 @@ select:focus, input[type="number"]:focus {
 #add-to-cart-button:hover {
   background-color: #45a049;
 }
+
+
+
+#thumbnail-gallery {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#thumbnail-gallery img {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+#thumbnail-gallery img:hover {
+  transform: scale(1.1);
+}
+
 
 /* Feedback Modal */
 .modal1 {
